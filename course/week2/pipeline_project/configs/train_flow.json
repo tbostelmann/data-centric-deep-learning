@@ -4,7 +4,8 @@
       "root": "./artifacts/data/mnist"
     },
     "model": {
-      "name": "linear"
+      "name": "mlp",
+      "width": 28
     },
     "optimizer": {
       "max_epochs": 10,

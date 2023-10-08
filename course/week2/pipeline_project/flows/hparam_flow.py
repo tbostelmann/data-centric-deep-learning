@@ -90,8 +90,10 @@ class DigitClassifierFlow(FlowSpec):
     # need a few of them so no need to call `merge_artifacts`
     self.dm = inputs[0].dm
 
-    scores = []        # populate with scores from each hparams
-    best_index = None  # replace with best index
+    # populate with scores from each hparams
+    scores = [x.callback.best_model_score for x in inputs]
+    # replace with best index
+    best_index = scores.index(min(scores))
     
     # ================================
     # FILL ME OUT
